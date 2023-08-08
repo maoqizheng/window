@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/js/bootstrap.js">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Document</title>
+
+</head>
+
+<body>
+  
+
+
+
+
+
+  <div class="container" style="padding-bottom: 10px;">
+    <button onclick="showDiv('root')">汇总</button>
+    <button onclick="showDiv('a')">窗帘1</button>
+    <button onclick="showDiv('b')">窗帘2</button>
+    <button onclick="showDiv('c')">窗帘3</button>
+  </div>
+
+<!-- 订单汇总 -->
+
+<div id="container" class="root" style="display:block;">
+  <div class="container">
+    <table class="table table-bordered border-primary">
+
+      <tr>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单据编号</td>
+        <td style="width:8.33%">CLM0001</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">单据日期</td>
+        <td style="width:8.33%">2023-02-01</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">交货日期</td>
+        <td style="width:8.33%">2023-03-01</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">条形码：</td>
+        <td colspan="2" rowspan="2" style="width:8.33%"></td>
+      </tr>
+      <tr>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">客户</td>
+        <td style="width:8.33%">赵六</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">联系人</td>
+        <td style="width:8.33%">凡总</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">联系方式</td>
+        <td colspan="2" style="width:8.33%">12312321321</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;"></td>
+        <td colspan="2" rowspan="2"style="width:8.33%"></td>
+
+      </tr>
+      <!-- <tr>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">总帘数</td>
+        <td style="width:8.33%">3</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">总金额</td>
+        <td style="width:8.33%">1334</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">物流方式</td>
+        <td style="width:8.33%">顺丰</td>
+        <td style="width:8.33%;text-align: center;background-color: #dde8f6;">收货地址</td>
+        <td colspan="2" style="width:8.33%">海宁航海科技</td>
+      </tr>
+      <tr>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">类型</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">型号</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">数量</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单位</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单价</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">加工单价</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">小计</td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">说明</td>
+      </tr>
+      <tr>
+        <td style="width:8.33%">侧拼</td>
+        <td style="width:8.33%">MG-1019</td>
+        <td style="width:8.33%">4</td>
+        <td style="width:8.33%">米</td>
+        <td style="width:8.33%">20</td>
+        <td style="width:8.33%">0</td>
+        <td style="width:8.33%">80</td>
+        <td style="width:8.33%"></td>
+      </tr>
+      <tr>
+        <td style="width:8.33%">主布</td>
+        <td style="width:8.33%">NT01</td>
+        <td style="width:8.33%">6</td>
+        <td style="width:8.33%">米</td>
+        <td style="width:8.33%">10</td>
+        <td style="width:8.33%">30</td>
+        <td style="width:8.33%">240</td>
+        <td style="width:8.33%"></td>
+      </tr>
+      <tr>
+        <td style="width:8.33%">花边</td>
+        <td style="width:8.33%">SN-32</td>
+        <td style="width:8.33%">4</td>
+        <td style="width:8.33%">米</td>
+        <td style="width:8.33%">25</td>
+        <td style="width:8.33%">0</td>
+        <td style="width:8.33%">100</td>
+        <td style="width:8.33%"></td>
+      </tr>
+      <tr>
+        <td style="width:8.33%">加折</td>
+        <td style="width:8.33%">MG-33</td>
+        <td style="width:8.33%">9</td>
+        <td style="width:8.33%">米</td>
+        <td style="width:8.33%">11</td>
+        <td style="width:8.33%">0</td>
+        <td style="width:8.33%">99</td>
+        <td style="width:8.33%"></td>
+      </tr>
+      <tr>
+        <td style="width:8.33%">其他</td>
+        <td style="width:8.33%">绑带</td>
+        <td style="width:8.33%">1</td>
+        <td style="width:8.33%"></td>
+        <td style="width:8.33%">25</td>
+        <td style="width:8.33%"></td>
+        <td style="width:8.33%">25</td>
+        <td style="width:8.33%"></td>
+      </tr>
+      <tr>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">备注：</td>
+        <td style="width:8.33%; text-align:right;" colspan="5"></td>
+        <td style="width:8.33%;text-align:center;background-color: #dde8f6;">合计：</td>
+        <td style="width:8.33%">554</td>
+      </tr> -->
+    </table>
+  </div>
+</div>
+
+<!-- --------------------------------- -->
+
+  <div id="container" class="a" style="display:none;">
+    <div class="container">
+      <table class="table table-bordered border-primary">
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">窗帘序号</td>
+          <td style="width:8.33%">窗帘1</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">安装位置</td>
+          <td style="width:8.33%">阳台</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">安装方式</td>
+          <td style="width:8.33%">上门安装</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">打开方式</td>
+          <td style="width:8.33%">双开</td>
+        </tr>
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">帘宽</td>
+          <td style="width:8.33%">3M</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">帘高</td>
+          <td style="width:8.33%">5M</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">窗型</td>
+          <td style="width:8.33%">U型</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">备注</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">类型</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">型号</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">数量</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单位</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单价</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">加工单价</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">小计</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">说明</td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">侧拼</td>
+          <td style="width:8.33%">MG-1019</td>
+          <td style="width:8.33%">4</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">20</td>
+          <td style="width:8.33%">0</td>
+          <td style="width:8.33%">80</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">主布</td>
+          <td style="width:8.33%">NT01</td>
+          <td style="width:8.33%">6</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">10</td>
+          <td style="width:8.33%">30</td>
+          <td style="width:8.33%">240</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">花边</td>
+          <td style="width:8.33%">SN-32</td>
+          <td style="width:8.33%">4</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%">0</td>
+          <td style="width:8.33%">100</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">加折</td>
+          <td style="width:8.33%">MG-33</td>
+          <td style="width:8.33%">9</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">11</td>
+          <td style="width:8.33%">0</td>
+          <td style="width:8.33%">99</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">其他</td>
+          <td style="width:8.33%">绑带</td>
+          <td style="width:8.33%">1</td>
+          <td style="width:8.33%"></td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%"></td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%; text-align:right;" colspan="7">合计：</td>
+          <td style="width:8.33%">554</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 演示窗帘一 -->
+
+  <div id="container" class="b" style="display:none;">
+    <div class="container">
+      <table class="table table-bordered border-primary">
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">窗帘序号</td>
+          <td style="width:8.33%">窗帘2</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">安装位置</td>
+          <td style="width:8.33%">客厅</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">安装方式</td>
+          <td style="width:8.33%">上门安装</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">打开方式</td>
+          <td style="width:8.33%">双开</td>
+        </tr>
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">帘宽</td>
+          <td style="width:8.33%">4M</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">帘高</td>
+          <td style="width:8.33%">6M</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">窗型</td>
+          <td style="width:8.33%">U型</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">备注</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">类型</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">型号</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">数量</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单位</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单价</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">加工单价</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">小计</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">说明</td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">侧拼</td>
+          <td style="width:8.33%">MG-1020</td>
+          <td style="width:8.33%">4</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">20</td>
+          <td style="width:8.33%">0</td>
+          <td style="width:8.33%">80</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">主布</td>
+          <td style="width:8.33%">NT01</td>
+          <td style="width:8.33%">6</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">10</td>
+          <td style="width:8.33%">30</td>
+          <td style="width:8.33%">240</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">花边</td>
+          <td style="width:8.33%">SN-32</td>
+          <td style="width:8.33%">4</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%">0</td>
+          <td style="width:8.33%">100</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">其他</td>
+          <td style="width:8.33%">绑带</td>
+          <td style="width:8.33%">1</td>
+          <td style="width:8.33%"></td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%"></td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%; text-align:right;" colspan="7">合计：</td>
+          <td style="width:8.33%">445</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 演示窗帘二 -->
+
+  <div id="container" class="c" style="display:none;">
+    <div class="container">
+      <table class="table table-bordered border-primary">
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">窗帘序号</td>
+          <td style="width:8.33%">窗帘3</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">安装位置</td>
+          <td style="width:8.33%">厕所</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">安装方式</td>
+          <td style="width:8.33%">上门安装</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">打开方式</td>
+          <td style="width:8.33%">双开</td>
+        </tr>
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">帘宽</td>
+          <td style="width:8.33%">5M</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">帘高</td>
+          <td style="width:8.33%">7M</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">窗型</td>
+          <td style="width:8.33%">U型</td>
+          <td style="width:8.33%;text-align: center;background-color: #dde8f6;">备注</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">类型</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">型号</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">数量</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单位</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">单价</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">加工单价</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">小计</td>
+          <td style="width:8.33%;text-align:center;background-color: #dde8f6;">说明</td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">侧拼</td>
+          <td style="width:8.33%">MG-1019</td>
+          <td style="width:8.33%">4</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">20</td>
+          <td style="width:8.33%">0</td>
+          <td style="width:8.33%">80</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">主布</td>
+          <td style="width:8.33%">NT01</td>
+          <td style="width:8.33%">6</td>
+          <td style="width:8.33%">米</td>
+          <td style="width:8.33%">10</td>
+          <td style="width:8.33%">30</td>
+          <td style="width:8.33%">240</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%">其他</td>
+          <td style="width:8.33%">绑带</td>
+          <td style="width:8.33%">1</td>
+          <td style="width:8.33%"></td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%"></td>
+          <td style="width:8.33%">25</td>
+          <td style="width:8.33%"></td>
+        </tr>
+        <tr>
+          <td style="width:8.33%; text-align:right;" colspan="7">合计：</td>
+          <td style="width:8.33%">345</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 演示窗帘三 -->
+
+  <!-- 植入广告 -->
+  <div class="container-fluid">
+    
+  </div>
+
+  <script>
+    function showDiv(className) {
+      var divs = ['root','a', 'b', 'c'];
+      for (var i = 0; i < divs.length; i++) {
+        document.getElementsByClassName(divs[i])[0].style.display = 'none';
+      }
+      document.getElementsByClassName(className)[0].style.display = 'block';
+    }
+  </script>
+</body>
+
+</html>
